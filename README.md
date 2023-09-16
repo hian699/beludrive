@@ -1,6 +1,6 @@
 # mdle
 
-App ôn thi ly thuyết bằng lái xe
+App ôn thi lý thuyết bằng lái xe của bạn Mãng CầuR (a.k.a Nar) và các bạn khác!
 
 ## Getting Started
 
