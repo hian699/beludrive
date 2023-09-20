@@ -1,6 +1,6 @@
 // Import the material package
 import 'package:flutter/material.dart';
-import './screens/home_screen.dart';
+import './pages/home.dart';
 void main() {
   //the runApp method
   runApp(
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       //remove the debug banner
       debugShowCheckedModeBanner: false,
       //set a homepage
-      home: HomeScreen(), //created this in separate file
+      home: HomePage(), //created this in separate file
     );
   }
 }
