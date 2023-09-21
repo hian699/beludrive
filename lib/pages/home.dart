@@ -102,6 +102,7 @@ class _HomePageState extends State<HomePage> {
                       height: 10,
                     ),
                     const Text('Học lý thuyết',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -131,6 +132,7 @@ class _HomePageState extends State<HomePage> {
                       height: 10,
                     ),
                     const Text('Biển báo',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -159,7 +161,8 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 10,
                     ),
-                    const Text('Thi sát ',
+                    const Text('Thi sát hạch',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -189,6 +192,7 @@ class _HomePageState extends State<HomePage> {
                       height: 10,
                     ),
                     const Text('Mẹo thi',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -218,6 +222,7 @@ class _HomePageState extends State<HomePage> {
                       height: 10,
                     ),
                     const Text('Tra cứu luật',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -247,6 +252,7 @@ class _HomePageState extends State<HomePage> {
                       height: 10,
                     ),
                     const Text('Các câu hay sai',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
