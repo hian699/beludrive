@@ -1,5 +1,5 @@
-name: mdle
-description: App ôn thi ly thuyết bằng lái xe
+name: testing
+description: thử
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -28,18 +28,25 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+
   flutter:
     sdk: flutter
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.7
+  url_launcher: any
+  sqflite: ^2.3.0
+  share_plus: ^7.1.0
+  auto_size_text: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -48,12 +55,16 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   flutter_launcher_icons: ^0.13.1
+  sqflite: any
+  path_provider: any
+
 
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icons/our_logo.png"
   min_sdk_android: 21
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -68,15 +79,51 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-      - assets/icons/backarrow.svg
-      - assets/icons/refresh.svg
-      - assets/icons/bagach.svg
-      - assets/icons/hoclythuyet.png
-      - assets/icons/bienbao.png
-      - assets/icons/meothi.png
-      - assets/icons/caccauhaysai.png
-      - assets/icons/thisathach.png
-      - assets/icons/traccuuluat.png
+     - assets/icons/backarrow.svg
+     - assets/icons/refresh.svg
+     - assets/icons/bagach.svg
+     - assets/icons/hoclythuyet.png
+     - assets/icons/bienbao.png
+     - assets/icons/meothi.png
+     - assets/icons/caccauhaysai.png
+     - assets/icons/thisathach.png
+     - assets/icons/traccuuluat.png
+     - assets/icons/home.png
+     - assets/icons/car.png
+     - assets/icons/notes.png
+     - assets/icons/settings.png
+     - assets/icons/mail.png
+     - assets/icons/share.png
+     - assets/icons/danhgia.png
+     - assets/icons/20caudiemliet.png
+     - assets/layer/(O).svg
+     - assets/icons/belulogo.svg
+     - assets/icons/knvsqt.png
+     - assets/icons/vhvsddl.png
+     - assets/icons/kythuatlai.png
+     - assets/icons/bienbaoduongbo.png
+     - assets/icons/sahinh.png
+     - assets/icons/arrowup.svg
+     - assets/icons/arrowdown.svg
+     - assets/icons/back.png
+     - assets/icons/search.png
+     - assets/icons/tron.png
+     - assets/icons/gach.png
+     - assets/icons/canhsat.png
+     - assets/icons/p.png
+     - assets/icons/ken.png
+     - assets/icons/speed.png
+     - assets/icons/v.png
+     - assets/icons/xe.png
+     - assets/icons/duong.png
+     - assets/icons/ruou.png
+     - assets/icons/gplx.png
+     - assets/icons/another.png
+     - assets/icons/leftarrow.png
+     - assets/icons/rightarrow.png
+     - assets/icons/deson.png
+     - assets/icons/decon.svg
+   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -89,27 +136,36 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-      - fonts:
-        - family: Raleway
-          fonts:
-            - asset: fonts/Raleway-Bold.ttf
-              weight: 700
-            - asset: fonts/Raleway-Medium.ttf
-              weight: 500
-            - asset: fonts/Raleway-Regular.ttf
-              weight: 400
-            - asset: fonts/Raleway-SemiBold.ttf
-              weight: 600
-        - family: Nunito
-          fonts:
-            - asset: fonts/Nunito-Bold.ttf
-              weight: 700
-            - asset: fonts/Nunito-Medium.ttf
-              weight: 500
-            - asset: fonts/Nunito-Regular.ttf
-              weight: 400
-            - asset: fonts/Nunito-SemiBold.ttf
-              weight: 600
+  fonts:
+     - family: Raleway
+       fonts:
+         - asset: fonts/Raleway-Bold.ttf
+           weight: 700
+         - asset: fonts/Raleway-Medium.ttf
+           weight: 500
+         - asset: fonts/Raleway-Regular.ttf
+           weight: 400
+         - asset: fonts/Raleway-SemiBold.ttf
+           weight: 600
+     - family: Nunito
+       fonts:
+         - asset: fonts/Nunito-Bold.ttf
+           weight: 700
+         - asset: fonts/Nunito-Medium.ttf
+           weight: 500
+         - asset: fonts/Nunito-Regular.ttf
+           weight: 400
+         - asset: fonts/Nunito-SemiBold.ttf
+           weight: 600
+     - family: Aclonica
+       fonts:
+         - asset: fonts/Aclonica-Regular.ttf
+           weight: 400
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
