@@ -1,25 +1,34 @@
 import 'package:flutter/material.dart';
-import '../constants.dart';
 
-class NextButton extends StatelessWidget {
-  const NextButton({Key? key, required this.nextQuestion}) : super(key: key);
+class RectangularButton extends StatelessWidget {
+  const RectangularButton({
+    super.key,
+    required this.onPressed,
+    required this.label,
+  });
 
-  final VoidCallback nextQuestion;
+  final VoidCallback? onPressed;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: nextQuestion,
-      child: Container(
+    return TextButton(
+      onPressed: onPressed,
+      child: SizedBox(
+        height: 50,
         width: double.infinity,
-        decoration: BoxDecoration(
-          color: neutral,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: Text(
-          'Next Question',
-          textAlign: TextAlign.center,
+        child: Card(
+          color: onPressed != null ? Colors.white24 : null,
+          child: Center(
+            child: Text(
+              label,
+              style: const TextStyle(
+                letterSpacing: 2,
+                fontSize: 25,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
         ),
       ),
     );

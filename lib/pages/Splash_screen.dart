@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testing/pages/Chooselicense.dart';
+import 'package:testing/pages/HomeA1.dart';
+import 'package:testing/main.dart';
+
+
 
 
 class Splash_screen extends StatefulWidget {
@@ -14,13 +19,14 @@ class Splash_screen extends StatefulWidget {
 class _Splash_screenState extends State<Splash_screen>
     with SingleTickerProviderStateMixin {
 
-  final SvgPicture _logo = SvgPicture.asset('assets/icons/belulogo.svg', width: 200,);
+  final SvgPicture _logo = SvgPicture.asset('assets/icons/belulogo.svg', width: 200);
   @override
   void initState() {
     super.initState();
     
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => chooselicense()));
+      show ?
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => chooselicense())) : Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
     });
     
   }

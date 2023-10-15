@@ -1,13 +1,14 @@
-// Store color and stuff
-
 import 'package:flutter/material.dart';
 
-//Set color for correct answers
-const Color correct = Color(0xFF69F0AE);
-//Set color for incorrect answers
-const Color incorrect = Color(0xFFF1632A);
-//Set a neutral color
-const Color neutral = Color(0xFFFDF5C5);
-//Background color
-const Color background = Color(0xFF000000);
-   
+const kSecondaryColor = Color(0xff8B94BC);
+const kGreenColor = Color(0xff6AC259);
+const kRedColor = Color(0xffE92E30);
+const kGrayColor = Color(0xffC1C1C1);
+const kBlackColor = Color(0xff101010);
+const kPrimaryGradient = LinearGradient(
+  colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
+  begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
+);
+
+const double kDefaultPadding = 20.0;

@@ -5,6 +5,10 @@ import 'package:testing/pages/Caccauhaysai.dart';
 import 'package:testing/pages/bienbao.dart';
 import 'package:testing/pages/choosede.dart';
 import 'package:testing/pages/hel.dart';
+import 'package:testing/pages/huongdanhoc.dart';
+import 'package:testing/variable/variable.dart';
+
+import 'package:testing/pages/settings.dart';
 import 'package:testing/pages/tips.dart';
 import './theory.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -18,13 +22,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final ImageIcon _home = ImageIcon(AssetImage('assets/icons/home.png'));
-  final ImageIcon _chonbanglai = ImageIcon(AssetImage('assets/icons/car.png'));
-  final ImageIcon _huongdan = ImageIcon(AssetImage('assets/icons/notes.png'));
-  final ImageIcon _caidat = ImageIcon(AssetImage('assets/icons/settings.png'));
-  final ImageIcon _gmail = ImageIcon(AssetImage('assets/icons/mail.png'));
-  final ImageIcon _chiase = ImageIcon(AssetImage('assets/icons/share.png'));
-  final ImageIcon _danhgia = ImageIcon(AssetImage('assets/icons/danhgia.png'));
+  final ImageIcon _home = const ImageIcon(AssetImage('assets/icons/home.png'));
+  final ImageIcon _chonbanglai = const ImageIcon(AssetImage('assets/icons/car.png'));
+  final ImageIcon _huongdan = const ImageIcon(AssetImage('assets/icons/notes.png'));
+  final ImageIcon _caidat = const ImageIcon(AssetImage('assets/icons/settings.png'));
+  final ImageIcon _gmail = const ImageIcon(AssetImage('assets/icons/mail.png'));
+  final ImageIcon _chiase = const ImageIcon(AssetImage('assets/icons/share.png'));
+  final ImageIcon _danhgia = const ImageIcon(AssetImage('assets/icons/danhgia.png'));
   final Image _Hoclythuyet = Image.asset("assets/icons/hoclythuyet.png");
   final Image _Bienbao = Image.asset("assets/icons/bienbao.png");
   final Image _Thisathach = Image.asset("assets/icons/thisathach.png");
@@ -99,7 +103,7 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Share.share(
-                "Bạn cần tài khoản fb thì liên hệ tk này https://www.facebook.com/profile.php?id=100014062039112");
+                "https://play.google.com/store/apps/details?id=com.emc.testingfront.testing");
           },
         );
   }
@@ -107,7 +111,7 @@ class _HomePageState extends State<HomePage> {
   ListTile _guimail() {
     return ListTile(
           leading: _gmail,
-          title: Text(
+          title: const Text(
             'Email hỗ trợ',
             style: TextStyle(
                 fontFamily: 'Nunito',
@@ -115,15 +119,17 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 20),
           ),
           onTap: () async {
-            String email = Uri.encodeComponent("Dna53611@gmail.com");
-            String subject = Uri.encodeComponent("Hello dev");
-            String body = Uri.encodeComponent("Bạn đang cần tài khoản fb thì nhắn cho tui");
+            String email = Uri.encodeComponent("plzlzp319@gmail.com");
+            String subject = Uri.encodeComponent("Chào đội hỗ trợ của Belu:Drive");
+            String body = Uri.encodeComponent("Mô tả lỗi: \nCác bước tái tạo nên lỗi: \nHệ điều hành và thiết bị: "
+                "\nẢnh chụp màn hình lỗi(nếu có): \nTôi rất mong nhận được sự hỗ trợ từ bạn đến khắc phục lỗi này. Xin cảm ơn!"
+                "\n\nTrân trọng,"
+                "\n[Yourname]");
             print(subject); //output: Hello%20Flutter
             Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
             if (await launchUrl(mail)) {
               //email app opened
             } else {
-              //email app is not opened
             }
           },
         );
@@ -132,13 +138,17 @@ class _HomePageState extends State<HomePage> {
   ListTile _caidatapp() {
     return ListTile(
           leading: _caidat,
-          title: Text(
+          title: const Text(
             'Cài đặt',
             style: TextStyle(
                 fontFamily: 'Nunito',
                 fontWeight: FontWeight.bold,
                 fontSize: 20),
           ),
+      selected: false,
+      onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const settings()));
+      },
         );
   }
 
@@ -146,12 +156,15 @@ class _HomePageState extends State<HomePage> {
     return ListTile(
           leading: _huongdan,
           title: const Text(
-            'Hướng Dẫn sử dụng',
+            'Hướng dẫn ôn thi',
             style: TextStyle(
                 fontFamily: 'Nunito',
                 fontWeight: FontWeight.bold,
                 fontSize: 20),
           ),
+      onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => tutorial(),));
+      },
         );
   }
 
@@ -237,7 +250,7 @@ Cac nút bên trên một trang
                 ),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ThilythuyetA1()));
+                      MaterialPageRoute(builder: (context) => const ThilythuyetA1()));
                 },
               ),
               ElevatedButton(
@@ -263,7 +276,7 @@ Cac nút bên trên một trang
                   ],
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> bienbaogiaothong()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const bienbaogiaothong()));
                 },
               ),
               ElevatedButton(
@@ -289,7 +302,7 @@ Cac nút bên trên một trang
                   ],
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => choosede()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const choosede()));
                 },
               ),
               ElevatedButton(
@@ -316,7 +329,7 @@ Cac nút bên trên một trang
                 ),
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Tips()));
+                      context, MaterialPageRoute(builder: (context) => const Tips()));
                 },
               ),
               ElevatedButton(
@@ -344,7 +357,7 @@ Cac nút bên trên một trang
                   ],
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => tracuuluat()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const tracuuluat()));
                 },
               ),
               ElevatedButton(
@@ -370,7 +383,7 @@ Cac nút bên trên một trang
                   ],
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => caccauhaysai()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Caccauhaysai()));
                 },
               ),
             ],
@@ -409,7 +422,7 @@ Cac nút bên trên một trang
 
 _launchURL() async {
   const url =
-      'https://docs.google.com/forms/d/e/1FAIpQLSeCb4jYuix1x4aY-7maleEPXzVlCzcoSpRZNqcK1aYQ2KvRNw/viewform?usp=sf_link';
+      'https://docs.google.com/forms/d/e/1FAIpQLScMJQIzG_81frziQJTrXsKZWt1jLVhTWUcyKd7EEJHvE0_Fww/viewform?usp=sf_link';
   if (await launch(url)) {
     await canLaunch(url);
   } else {

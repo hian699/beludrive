@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0+3
 
 environment:
   sdk: '>=3.1.1 <4.0.0'
@@ -42,6 +42,21 @@ dependencies:
   sqflite: ^2.3.0
   share_plus: ^7.1.0
   auto_size_text: any
+  fluttertoast: any
+  flutter_hooks: ^0.18.0
+  get: any
+  get_storage: ^2.1.1
+  photo_view: any
+  percent_indicator: any
+  path: any
+  carousel_slider: any
+  shared_preferences: any
+  provider: any
+  hooks_riverpod: ^2.4.3
+  smooth_page_indicator: ^1.1.0
+  easy_search_bar: ^2.5.0
+  change_app_package_name: ^1.1.0
+  animated_search_bar: ^2.7.0
 
 dev_dependencies:
   flutter_test:
@@ -55,7 +70,6 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   flutter_launcher_icons: ^0.13.1
-  sqflite: any
   path_provider: any
 
 
@@ -79,50 +93,17 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/icons/backarrow.svg
-     - assets/icons/refresh.svg
-     - assets/icons/bagach.svg
-     - assets/icons/hoclythuyet.png
-     - assets/icons/bienbao.png
-     - assets/icons/meothi.png
-     - assets/icons/caccauhaysai.png
-     - assets/icons/thisathach.png
-     - assets/icons/traccuuluat.png
-     - assets/icons/home.png
-     - assets/icons/car.png
-     - assets/icons/notes.png
-     - assets/icons/settings.png
-     - assets/icons/mail.png
-     - assets/icons/share.png
-     - assets/icons/danhgia.png
-     - assets/icons/20caudiemliet.png
-     - assets/layer/(O).svg
-     - assets/icons/belulogo.svg
-     - assets/icons/knvsqt.png
-     - assets/icons/vhvsddl.png
-     - assets/icons/kythuatlai.png
-     - assets/icons/bienbaoduongbo.png
-     - assets/icons/sahinh.png
-     - assets/icons/arrowup.svg
-     - assets/icons/arrowdown.svg
-     - assets/icons/back.png
-     - assets/icons/search.png
-     - assets/icons/tron.png
-     - assets/icons/gach.png
-     - assets/icons/canhsat.png
-     - assets/icons/p.png
-     - assets/icons/ken.png
-     - assets/icons/speed.png
-     - assets/icons/v.png
-     - assets/icons/xe.png
-     - assets/icons/duong.png
-     - assets/icons/ruou.png
-     - assets/icons/gplx.png
-     - assets/icons/another.png
-     - assets/icons/leftarrow.png
-     - assets/icons/rightarrow.png
-     - assets/icons/deson.png
-     - assets/icons/decon.svg
+     - assets/db/
+     - assets/icons/
+     - assets/layer/
+     - assets/startup/
+     - assets/bienbaoduongbo/
+     - assets/bienbaocam/
+     - assets/sahinh/
+     - assets/bienhieulenh/
+     - assets/bienphu/
+     - assets/khainiemvaquytac/
+     - assets/bienbaonguyhiemvacanhbao/
    #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

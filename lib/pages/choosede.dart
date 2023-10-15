@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:testing/screens/test_mode_page.dart';
 
 class choosede extends StatelessWidget {
   const choosede({super.key});
 
   @override
   Widget build(BuildContext context) {
+    late double screenWidth = MediaQuery.of(context).size.width;
+    late double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color(0xffF37022),
       appBar: AppBar(
@@ -42,8 +45,8 @@ class choosede extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.only(left: 15, right: 20),
-                      width: 390,
+                      padding: EdgeInsets.only(left: 10, right: 20),
+                      width: screenWidth*0.99,
                       height: 81,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
@@ -88,11 +91,14 @@ class choosede extends StatelessWidget {
                                     fontSize: 15,
                                   ),
                                 ),
-                                onPressed: (){},
+                                onPressed: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => TestModePage()));
+                                },
                               ),
                             ],
                           ),
                           Container(
+                            width: screenWidth,
                             decoration: BoxDecoration(
                               border: Border.all(
                                 width: 1,
@@ -101,6 +107,7 @@ class choosede extends StatelessWidget {
                             ),
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               SizedBox(
                                 width: 5,

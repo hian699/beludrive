@@ -1,6 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import '../variable/variable.dart';
+import 'package:testing/Theorytrainning/20cauliet.dart';
+import 'package:testing/Theorytrainning/bienbaoduongbointheory.dart';
+import 'package:testing/Theorytrainning/knvaquytacintheory.dart';
+import 'package:testing/Theorytrainning/kytthuatlaiintheory.dart';
+import 'package:testing/Theorytrainning/sahinhintheory.dart';
+import 'package:testing/Theorytrainning/vanhoavadaoduclai.dart';
+import 'package:testing/main.dart';
+import 'package:testing/models/questionknvaquytac.dart';
+import 'package:testing/models/questionvanhoavadaoduclaixe.dart';
+import 'package:testing/variable/variable.dart';
 
 class ThilythuyetA1 extends StatefulWidget {
   const ThilythuyetA1({super.key});
@@ -8,7 +17,8 @@ class ThilythuyetA1 extends StatefulWidget {
   State<ThilythuyetA1> createState() => _ThilythuyetA1State();
 }
 
-class _ThilythuyetA1State extends State<ThilythuyetA1> {
+class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateMixin {
+  late AnimationController controller;
   late double screenWidth = MediaQuery.of(context).size.width;
   late double screenHeight = MediaQuery.of(context).size.height;
   final Image _caudiemliet = Image.asset('assets/icons/20caudiemliet.png');
@@ -17,20 +27,40 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
   final Image _kythuatlai = Image.asset('assets/icons/kythuatlai.png');
   final Image _bienbaoduongbo = Image.asset('assets/icons/bienbaoduongbo.png');
   final Image _sahinh = Image.asset('assets/icons/sahinh.png');
+
+  @override
+  void initState() {
+    controller = AnimationController(
+      /// [AnimationController]s can be created with `vsync: this` because of
+      /// [TickerProviderStateMixin].
+      vsync: this,
+      duration: const Duration(seconds: 5),
+    )..addListener(() {
+      setState(() {});
+    });
+    controller.repeat(reverse: true);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
+    int ivhvaddl = scorevhvsddl.toInt();
     return Scaffold(
       appBar: appbartheory(),
-      backgroundColor: const Color(0xffF37022),
+      backgroundColor: const Color(0xffF37020),
       body: Stack(
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30)
-                ),
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
                 border: Border.all(width: 1.0)),
           ),
           Container(
@@ -51,14 +81,13 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     fixedSize: const Size(364, 78),
                     padding: const EdgeInsets.only(left: 0),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)
-                    ),
+                        borderRadius: BorderRadius.circular(20)),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                          width: 85,
+                          width: screenWidth * 0.20,
                           height: 85,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -78,9 +107,9 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             '20 câu hỏi điểm liệt',
                             style: TextStyle(
                                 fontFamily: 'Nunito',
-                                fontSize: 23,
+                                fontSize: 22,
                                 fontWeight: FontWeight.bold),
-                            minFontSize: 22,
+                            minFontSize: 20,
                           ),
                           const Text(
                             'Gồm 20 câu không thể sai, nếu sai sẽ rớt',
@@ -91,10 +120,35 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
                               Container(
-                                  width: screenWidth*0.6,
-                                  height: 5,
-                                  margin: const EdgeInsets.only(top: 10),
+                                  width: screenWidth * 0.58,
+                                  height: 10,
+                                  margin: const EdgeInsets.only(
+                                    top: 10,
                                   ),
+                                  child: SliderTheme(
+                                    data: SliderThemeData(
+                                      overlayShape:
+                                          SliderComponentShape.noOverlay,
+                                      inactiveTrackColor:
+                                          const Color(0xff858585),
+                                      activeTrackColor: const Color(0xffF37020),
+                                      inactiveTickMarkColor: Colors.transparent,
+                                      activeTickMarkColor: Colors.transparent,
+                                      thumbShape: const RoundSliderOverlayShape(
+                                          overlayRadius: 0),
+                                    ),
+                                    child: Slider(
+                                      min: 0,
+                                      max: 83,
+                                      divisions: 20,
+                                      value: scorevhvsddl,
+                                      onChanged: (double value) {
+                                        setState(() {
+                                          idiemliet = scorevhvsddl.toInt();
+                                        });
+                                      },
+                                    ),
+                                  )),
                             ],
                           )
                         ],
@@ -110,6 +164,10 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     ],
                   ),
                   onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => haimuoicauliet()));
                   },
                 ),
                 ElevatedButton(
@@ -126,7 +184,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                          width: 85,
+                          width: screenWidth * 0.20,
                           height: 85,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -134,8 +192,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             border: Border.all(width: 1.0),
                           ),
                           child: Center(
-                            child:
-                            _knvsqt,
+                            child: _knvsqt,
                           )),
                       const SizedBox(
                         width: 10,
@@ -147,28 +204,31 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             'Khái niệm và quy tắc',
                             style: TextStyle(
                                 fontFamily: 'Nunito',
-                                fontSize: 23,
+                                fontSize: 22,
                                 fontWeight: FontWeight.bold),
                           ),
                           const Text(
                             'Gồm 83 câu hỏi (18 câu điểm liệt)',
                             style:
-                            TextStyle(fontSize: 10, fontFamily: 'Nunito'),
+                                TextStyle(fontSize: 10, fontFamily: 'Nunito'),
                           ),
                           Stack(
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
                               Container(
-                                  width: screenWidth*0.6,
+                                  width: screenWidth * 0.58,
                                   height: 10,
-                                  margin: const EdgeInsets.only(top: 10,),
+                                  margin: const EdgeInsets.only(
+                                    top: 10,
+                                  ),
                                   child: SliderTheme(
                                     data: SliderThemeData(
-                                      overlayShape: SliderComponentShape.noOverlay,
-                                      inactiveTrackColor: const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37022),
-                                      inactiveTickMarkColor:
-                                      Colors.transparent,
+                                      overlayShape:
+                                          SliderComponentShape.noOverlay,
+                                      inactiveTrackColor:
+                                          const Color(0xff858585),
+                                      activeTrackColor: const Color(0xffF37020),
+                                      inactiveTickMarkColor: Colors.transparent,
                                       activeTickMarkColor: Colors.transparent,
                                       thumbShape: const RoundSliderOverlayShape(
                                           overlayRadius: 0),
@@ -181,8 +241,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                                       onChanged: (double value) {
                                         setState(() {
                                           currentknvsqt = valuediemliet;
-                                          iknvsqt =
-                                              currentknvsqt.toInt();
+                                          iknvsqt = currentknvsqt.toInt();
                                         });
                                       },
                                     ),
@@ -195,13 +254,14 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                         children: <Widget>[
                           Container(
                             padding: const EdgeInsets.only(top: 40),
-                            child: Text('$iknvsqt/83'),
+                            child: Text('$iknvsqt/${khainiemvaquytacquestion.length}'),
                           ),
                         ],
                       )
                     ],
                   ),
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => knvaquytac()));
                   },
                 ),
                 ElevatedButton(
@@ -218,7 +278,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                          width: 85,
+                          width: screenWidth * 0.20,
                           height: 85,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -226,8 +286,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             border: Border.all(width: 1.0),
                           ),
                           child: Center(
-                            child:
-                            _vhvsddl,
+                            child: _vhvsddl,
                           )),
                       const SizedBox(
                         width: 10,
@@ -238,50 +297,53 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                           const AutoSizeText(
                             'Văn hóa và đạo đức lái',
                             style: TextStyle(
-                              fontFamily: 'Nunito',
-                              fontSize: 23,
-                              fontWeight: FontWeight.bold,
-                            ),
+                                fontFamily: 'Nunito',
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                             maxLines: 1,
-                            minFontSize: 22,
+                            minFontSize: 20,
                           ),
                           const Text(
                             'Gồm 5 câu hỏi',
                             style:
-                            TextStyle(fontSize: 10, fontFamily: 'Nunito'),
+                                TextStyle(fontSize: 10, fontFamily: 'Nunito'),
                           ),
                           Stack(
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
                               Container(
-                                  width: screenWidth*0.6,
-                                  height: 10,
-                                  margin: const EdgeInsets.only(top: 10,),
-                                  child: SliderTheme(
-                                    data: SliderThemeData(
-                                      overlayShape: SliderComponentShape.noOverlay,
-                                      inactiveTrackColor: const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37022),
-                                      inactiveTickMarkColor:
-                                      Colors.transparent,
-                                      activeTickMarkColor: Colors.transparent,
-                                      thumbShape: const RoundSliderOverlayShape(
-                                          overlayRadius: 0),
-                                    ),
-                                    child: Slider(
-                                      min: 0,
-                                      max: 5,
-                                      divisions: 20,
-                                      value: currentvhvsddl,
-                                      onChanged: (double value) {
-                                        setState(() {
-                                          currentvhvsddl = valuediemliet;
-                                          ivsvsddl =
-                                              currentvhvsddl.toInt();
-                                        });
-                                      },
-                                    ),
-                                  )),
+                                  width: screenWidth * 0.58,
+                                  height: 5,
+                                  margin: const EdgeInsets.only(
+                                    top: 10,
+                                  ),
+                                child: SliderTheme(
+                                  data: SliderThemeData(
+                                    overlayShape:
+                                    SliderComponentShape.noOverlay,
+                                    inactiveTrackColor:
+                                    const Color(0xff858585),
+                                    activeTrackColor: const Color(0xffF37020),
+                                    inactiveTickMarkColor: Colors.transparent,
+                                    activeTickMarkColor: Colors.transparent,
+                                    thumbShape: const RoundSliderOverlayShape(
+                                        overlayRadius: 0),
+                                  ),
+                                  child: Slider(
+                                    min: 0,
+                                    max: 83,
+                                    divisions: 20,
+                                    value: currentknvsqt,
+                                    onChanged: (double value) {
+                                      setState(() {
+                                        currentknvsqt = valuediemliet;
+                                        iknvsqt = currentknvsqt.toInt();
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
                             ],
                           )
                         ],
@@ -290,13 +352,14 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                         children: <Widget>[
                           Container(
                             padding: const EdgeInsets.only(top: 40),
-                            child: Text('$ivsvsddl/5'),
+                            child: Text('$ivhvaddl/${vanhoavadaoduclaiquestion.length}'),
                           ),
                         ],
                       )
                     ],
                   ),
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => vanhoavadaoduclai()));
                   },
                 ),
                 ElevatedButton(
@@ -313,7 +376,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                          width: 85,
+                          width: screenWidth * 0.20,
                           height: 85,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -321,8 +384,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             border: Border.all(width: 1.0),
                           ),
                           child: Center(
-                            child:
-                            _kythuatlai,
+                            child: _kythuatlai,
                           )),
                       const SizedBox(
                         width: 10,
@@ -334,28 +396,29 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             'Kỹ thuật lái xe',
                             style: TextStyle(
                                 fontFamily: 'Nunito',
-                                fontSize: 23,
+                                fontSize: 22,
                                 fontWeight: FontWeight.bold),
                           ),
                           const Text(
                             'Gồm 12 câu hỏi(2 câu điểm liệt)',
                             style:
-                            TextStyle(fontSize: 10, fontFamily: 'Nunito'),
+                                TextStyle(fontSize: 10, fontFamily: 'Nunito'),
                           ),
                           Stack(
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
                               Container(
-                                  width: screenWidth*0.6,
+                                  width: screenWidth * 0.58,
                                   height: 10,
                                   margin: const EdgeInsets.only(top: 10),
                                   child: SliderTheme(
                                     data: SliderThemeData(
-                                      overlayShape: SliderComponentShape.noOverlay,
-                                      inactiveTrackColor: const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37022),
-                                      inactiveTickMarkColor:
-                                      Colors.transparent,
+                                      overlayShape:
+                                          SliderComponentShape.noOverlay,
+                                      inactiveTrackColor:
+                                          const Color(0xff858585),
+                                      activeTrackColor: const Color(0xffF37020),
+                                      inactiveTickMarkColor: Colors.transparent,
                                       activeTickMarkColor: Colors.transparent,
                                       thumbShape: const RoundSliderOverlayShape(
                                           overlayRadius: 0),
@@ -389,6 +452,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     ],
                   ),
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => kythuatlaiintheory()));
                   },
                 ),
                 ElevatedButton(
@@ -405,7 +469,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                          width: 85,
+                          width: screenWidth * 0.20,
                           height: 85,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -413,8 +477,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             border: Border.all(width: 1.0),
                           ),
                           child: Center(
-                            child:
-                            _bienbaoduongbo,
+                            child: _bienbaoduongbo,
                           )),
                       const SizedBox(
                         width: 10,
@@ -426,28 +489,31 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             'Biển báo đường bộ',
                             style: TextStyle(
                                 fontFamily: 'Nunito',
-                                fontSize: 23,
+                                fontSize: 22,
                                 fontWeight: FontWeight.bold),
                           ),
                           const Text(
                             'Gồm 65 câu hỏi',
                             style:
-                            TextStyle(fontSize: 10, fontFamily: 'Nunito'),
+                                TextStyle(fontSize: 10, fontFamily: 'Nunito'),
                           ),
                           Stack(
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
                               Container(
-                                  width: screenWidth*0.6,
+                                  width: screenWidth * 0.58,
                                   height: 10,
-                                  margin: const EdgeInsets.only(top: 10,),
+                                  margin: const EdgeInsets.only(
+                                    top: 10,
+                                  ),
                                   child: SliderTheme(
                                     data: SliderThemeData(
-                                      overlayShape: SliderComponentShape.noOverlay,
-                                      inactiveTrackColor: const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37022),
-                                      inactiveTickMarkColor:
-                                      Colors.transparent,
+                                      overlayShape:
+                                          SliderComponentShape.noOverlay,
+                                      inactiveTrackColor:
+                                          const Color(0xff858585),
+                                      activeTrackColor: const Color(0xffF37020),
+                                      inactiveTickMarkColor: Colors.transparent,
                                       activeTickMarkColor: Colors.transparent,
                                       thumbShape: const RoundSliderOverlayShape(
                                           overlayRadius: 0),
@@ -481,6 +547,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     ],
                   ),
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => bienbaoduongbo()));
                   },
                 ),
                 ElevatedButton(
@@ -505,8 +572,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             border: Border.all(width: 1.0),
                           ),
                           child: Center(
-                            child:
-                            _sahinh,
+                            child: _sahinh,
                           )),
                       const SizedBox(
                         width: 10,
@@ -518,28 +584,31 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                             'Sa hình',
                             style: TextStyle(
                                 fontFamily: 'Nunito',
-                                fontSize: 23,
+                                fontSize: 22,
                                 fontWeight: FontWeight.bold),
                           ),
                           const Text(
                             'Gồm 35 câu hỏi',
                             style:
-                            TextStyle(fontSize: 10, fontFamily: 'Nunito'),
+                                TextStyle(fontSize: 10, fontFamily: 'Nunito'),
                           ),
                           Stack(
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
                               Container(
-                                  width: screenWidth*0.6,
+                                  width: screenWidth * 0.58,
                                   height: 15,
-                                  margin: const EdgeInsets.only(top: 10,),
+                                  margin: const EdgeInsets.only(
+                                    top: 10,
+                                  ),
                                   child: SliderTheme(
                                     data: SliderThemeData(
-                                      overlayShape: SliderComponentShape.noOverlay,
-                                      inactiveTrackColor: const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37022),
-                                      inactiveTickMarkColor:
-                                      Colors.transparent,
+                                      overlayShape:
+                                          SliderComponentShape.noOverlay,
+                                      inactiveTrackColor:
+                                          const Color(0xff858585),
+                                      activeTrackColor: const Color(0xffF37020),
+                                      inactiveTickMarkColor: Colors.transparent,
                                       activeTickMarkColor: Colors.transparent,
                                       thumbShape: const RoundSliderOverlayShape(
                                           overlayRadius: 0),
@@ -552,8 +621,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                                       onChanged: (double value) {
                                         setState(() {
                                           currentsahinh = sahinh;
-                                          isahinh =
-                                              currentsahinh.toInt();
+                                          isahinh = currentsahinh.toInt();
                                         });
                                       },
                                     ),
@@ -573,6 +641,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
                     ],
                   ),
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => sahinhintheory()));
                   },
                 ),
               ],
@@ -585,7 +654,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
 
   AppBar appbartheory() {
     return AppBar(
-      backgroundColor: const Color(0xffF37022),
+      backgroundColor: const Color(0xffF37020),
       title: const Text(
         'Học lí thuyết',
         style: TextStyle(
@@ -596,6 +665,101 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> {
       ),
       centerTitle: true,
       elevation: 0.0,
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.refresh_sharp),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                backgroundColor: Color(0xffFB8D4C),
+                title: Center(
+                  child: Text(
+                    'Reset tất cả bài học',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Nunito',
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+                alignment: Alignment.center,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                ),
+                content: SingleChildScrollView(
+                  child: ListBody(
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xffFFEFC8),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(width: 1),
+                        ),
+                        width: 300,
+                        height: 107,
+                        child: Text(
+                          'Bạn có muốn xóa tất cả các câu đã học. Nếu bạn chọn “Đồng ý” tất cả các câu đã học sẽ bị xóa và bạn sẽ phải học lại từ đầu',
+                          overflow: TextOverflow.clip,
+                          softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                actionsAlignment: MainAxisAlignment.spaceAround,
+                actions: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Đồng ý',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Nunito',
+                        fontSize: 17,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xffFFCA4B),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      'Huỷ bỏ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Nunito',
+                        fontSize: 17,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xffFFCA4B),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
+        )
+      ],
     );
   }
 }

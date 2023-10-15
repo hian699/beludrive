@@ -25,25 +25,25 @@ class _tracuuluatState extends State<tracuuluat> {
         child: Scaffold(
           appBar: AppBar(
             elevation: 0, //Xoa bong
-            title: Text(
+            title: const Text(
               'Tra cứu luật giao thông',
             ),
             // Thêm một nút tìm kiếm vào thuộc tính actions của AppBar
             actions: [
               IconButton(
-                icon: Image.asset('assets/icons/search.png'),
+                icon: const Icon(Icons.search_rounded),
                 padding: EdgeInsets.zero,
                 onPressed: _onSearchPressed,
               ),
             ],
-            bottom: TabBar(
-              tabs: const [
+            bottom: const TabBar(
+              tabs: [
                 Tab(text: 'XE MÁY'),
                 Tab(text: 'Ô TÔ'),
                 Tab(text: 'KHÁC'),
               ],
             ),
-            backgroundColor: Color(0xffF37022), //Tao mau
+            backgroundColor: const Color(0xffF37022), //Tao mau
           ),
 
           body: TabBarView(
@@ -51,36 +51,34 @@ class _tracuuluatState extends State<tracuuluat> {
     Center(child: Stack(
       children: [
         Container(
-          padding: EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20),
         ),
         GridView.count(
-          padding: EdgeInsets.only(top: 25,left: 22,right: 22),
+          padding: const EdgeInsets.only(top: 25,left: 22,right: 22),
           crossAxisCount: 3,//so cot
           crossAxisSpacing:15,//khoang cach cac cot
           mainAxisSpacing: 0.3,//khoang cach cac hang
-          childAspectRatio: 0.75,//ti le cac o
+          childAspectRatio: 0.7,//ti le cac o
           primary: false,
           children: <Widget>[
             Column(
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/canhsat.png'),
-                    ),
+                    child: Image.asset('assets/icons/canhsat.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Hiệu lệnh, chỉ dẫn',style: TextStyle(
                     fontSize: 17,
@@ -97,23 +95,21 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/car.png'),
-                    ),
+                    child: Image.asset('assets/icons/xetrongtracuu.png'),
                   ),
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> tracuu()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const tracuu()));
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Chuyển hướng, nhường đường', style: TextStyle(
                     fontSize: 15,
@@ -130,22 +126,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/p.png'),
-                    ),
+                    child: Image.asset('assets/icons/p.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Dừng xe, đỗ xe', style: TextStyle(
                     fontSize: 17,
@@ -162,22 +156,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/ken.png'),
-                    ),
+                    child: Image.asset('assets/icons/ken.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Thiết bị ưu tiên, còi', style: TextStyle(
                     fontSize: 17,
@@ -194,22 +186,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/speed.png'),
-                    ),
+                    child: Image.asset('assets/icons/speed.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Tốc dộ, khoảng cách an toàn', style: TextStyle(
                     fontSize: 17,
@@ -226,22 +216,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/v.png'),
-                    ),
+                    child: Image.asset('assets/icons/v.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Vận chuyển người, hàng hóa', style: TextStyle(
                     fontSize: 17,
@@ -258,22 +246,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/xe.png'),
-                    ),
+                    child: Image.asset('assets/icons/xe.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Trang thiết bị phương tiện', style: TextStyle(
                     fontSize: 17,
@@ -290,22 +276,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/duong.png'),
-                    ),
+                    child: Image.asset('assets/icons/duong.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Đường cấm, đường một', style: TextStyle(
                     fontSize: 17,
@@ -322,22 +306,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/ruou.png'),
-                    ),
+                    child: Image.asset('assets/icons/ruou.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Nồng độ cồn, chất kích thích', style: TextStyle(
                     fontSize: 17,
@@ -354,22 +336,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/gplx.png'),
-                    ),
+                    child: Image.asset('assets/icons/gplx.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Giấy tờ xe', style: TextStyle(
                     fontSize: 17,
@@ -386,22 +366,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/another.png'),
-                    ),
+                    child: Image.asset('assets/icons/another.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Khác', style: TextStyle(
                     fontSize: 17,
@@ -421,36 +399,34 @@ class _tracuuluatState extends State<tracuuluat> {
     Center(child:Stack(
       children: [
         Container(
-          padding: EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20),
         ),
         GridView.count(
-          padding: EdgeInsets.only(top: 25,left: 22,right: 22),
+          padding: const EdgeInsets.only(top: 25,left: 22,right: 22),
           crossAxisCount: 3,//so cot
           crossAxisSpacing:15,//khoang cach cac cot
-          mainAxisSpacing: 0.75,//khoang cach cac hang
-          childAspectRatio: 0.75,//ti le cac o
+          mainAxisSpacing: 0.7,//khoang cach cac hang
+          childAspectRatio: 0.7,//ti le cac o
           primary: false,
           children: <Widget>[
             Column(
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/canhsat.png'),
-                    ),
+                    child: Image.asset('assets/icons/canhsat.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Hiệu lệnh, chỉ dẫn', style: TextStyle(
                     fontSize: 17,
@@ -467,22 +443,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/car.png'),
-                    ),
+                    child: Image.asset('assets/icons/xetrongtracuu.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Chuyển hướng, nhường đường', style: TextStyle(
                     fontSize: 15,
@@ -499,22 +473,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/p.png'),
-                    ),
+                    child: Image.asset('assets/icons/p.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Dừng xe, đỗ xe', style: TextStyle(
                     fontSize: 17,
@@ -531,22 +503,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/ken.png'),
-                    ),
+                    child: Image.asset('assets/icons/ken.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Thiết bị ưu tiên, còi', style: TextStyle(
                     fontSize: 17,
@@ -563,22 +533,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/speed.png'),
-                    ),
+                    child: Image.asset('assets/icons/speed.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Tốc dộ, khoảng cách an toàn', style: TextStyle(
                     fontSize: 17,
@@ -595,22 +563,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/v.png'),
-                    ),
+                    child: Image.asset('assets/icons/v.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Vận chuyển người, hàng hóa', style: TextStyle(
                     fontSize: 17,
@@ -627,22 +593,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/xe.png'),
-                    ),
+                    child: Image.asset('assets/icons/xe.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Trang thiết bị phương tiện', style: TextStyle(
                     fontSize: 17,
@@ -659,22 +623,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/duong.png'),
-                    ),
+                    child: Image.asset('assets/icons/duong.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Đường cấm, đường một', style: TextStyle(
                     fontSize: 17,
@@ -691,22 +653,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/ruou.png'),
-                    ),
+                    child: Image.asset('assets/icons/ruou.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Nồng độ cồn, chất kích thích', style: TextStyle(
                     fontSize: 17,
@@ -723,22 +683,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/gplx.png'),
-                    ),
+                    child: Image.asset('assets/icons/gplx.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Giấy tờ xe', style: TextStyle(
                     fontSize: 17,
@@ -755,22 +713,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/another.png'),
-                    ),
+                    child: Image.asset('assets/icons/another.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Khác', style: TextStyle(
                     fontSize: 17,
@@ -790,36 +746,34 @@ class _tracuuluatState extends State<tracuuluat> {
     Center(child: Stack(
       children: [
         Container(
-          padding: EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20),
         ),
         GridView.count(
-          padding: EdgeInsets.only(top: 25,left: 22,right: 22),
+          padding: const EdgeInsets.only(top: 25,left: 22,right: 22),
           crossAxisCount: 3,//so cot
           crossAxisSpacing:15,//khoang cach cac cot
-          mainAxisSpacing: 0.75,//khoang cach cac hang
-          childAspectRatio: 0.75,//ti le cac o
+          mainAxisSpacing: 0.7,//khoang cach cac hang
+          childAspectRatio: 0.7,//ti le cac o
           primary: false,
           children: <Widget>[
             Column(
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/canhsat.png'),
-                    ),
+                    child: Image.asset('assets/icons/canhsat.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Hiệu lệnh, chỉ dẫn', style: TextStyle(
                     fontSize: 17,
@@ -836,22 +790,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/car.png'),
-                    ),
+                    child: Image.asset('assets/icons/xetrongtracuu.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Chuyển hướng, nhường đường', style: TextStyle(
                     fontSize: 15,
@@ -868,22 +820,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/p.png'),
-                    ),
+                    child: Image.asset('assets/icons/p.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Dừng xe, đỗ xe', style: TextStyle(
                     fontSize: 17,
@@ -900,22 +850,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/ken.png'),
-                    ),
+                    child: Image.asset('assets/icons/ken.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Thiết bị ưu tiên, còi', style: TextStyle(
                     fontSize: 17,
@@ -932,22 +880,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/speed.png'),
-                    ),
+                    child: Image.asset('assets/icons/speed.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Tốc dộ, khoảng cách an toàn', style: TextStyle(
                     fontSize: 17,
@@ -964,22 +910,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/v.png'),
-                    ),
+                    child: Image.asset('assets/icons/v.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Vận chuyển người, hàng hóa', style: TextStyle(
                     fontSize: 17,
@@ -996,22 +940,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/xe.png'),
-                    ),
+                    child: Image.asset('assets/icons/xe.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Trang thiết bị phương tiện', style: TextStyle(
                     fontSize: 17,
@@ -1028,22 +970,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/duong.png'),
-                    ),
+                    child: Image.asset('assets/icons/duong.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Đường cấm, đường một', style: TextStyle(
                     fontSize: 17,
@@ -1060,22 +1000,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/ruou.png'),
-                    ),
+                    child: Image.asset('assets/icons/ruou.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Nồng độ cồn, chất kích thích', style: TextStyle(
                     fontSize: 17,
@@ -1092,22 +1030,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/gplx.png'),
-                    ),
+                    child: Image.asset('assets/icons/gplx.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Giấy tờ xe', style: TextStyle(
                     fontSize: 17,
@@ -1124,22 +1060,20 @@ class _tracuuluatState extends State<tracuuluat> {
               children: [
                 ElevatedButton( //Tao nut
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFB8D4C),//Mau nut
-                    side: BorderSide(width: 1),//Tao vien
+                    backgroundColor: const Color(0xffFB8D4C),//Mau nut
+                    side: const BorderSide(width: 1),//Tao vien
                     shape: RoundedRectangleBorder(//Cau lenh thuc hien bo goc
                       borderRadius: BorderRadius.circular(20),//Bo goc
 
                     ),
                   ),
                   child:  Center(
-                    child: Container(
-                      child: Image.asset('assets/icons/another.png'),
-                    ),
+                    child: Image.asset('assets/icons/another.png'),
                   ),
                   onPressed: (){
                   },
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Khác', style: TextStyle(
                     fontSize: 17,

@@ -33,7 +33,7 @@ class _myappState extends State<tracuu> {
         // Thêm một nút tìm kiếm vào thuộc tính actions của AppBar
         actions: [
           IconButton(
-            icon: Image.asset('assets/icons/search.png'),
+            icon: const Icon(Icons.search),
             padding: EdgeInsets.zero,
             onPressed: _onSearchPressed,
           ),
