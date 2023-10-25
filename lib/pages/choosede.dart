@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testing/pages/HomeA1.dart';
 import 'package:testing/screens/test_mode_page.dart';
 
 class choosede extends StatelessWidget {
@@ -22,6 +23,12 @@ class choosede extends StatelessWidget {
         backgroundColor: const Color(0xffF37022),
         elevation: 0.0,
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
       ),
       body: Stack(
         children: <Widget>[
@@ -55,24 +62,25 @@ class choosede extends StatelessWidget {
                       child: Column(
                         children: <Widget>[
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Image.asset(
-                                'assets/icons/deson.png',
-                                height: 50,
-                                width: 50,
-                              ),
-                              Text(
-                                'Đề số 1',
-                                style: TextStyle(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Nunito',
-                                    color: Colors.white),
-                                textAlign: TextAlign.end,
-                              ),
-                              SizedBox(
-                                width: 125,
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/icons/deson.png',
+                                    height: 50,
+                                    width: 50,
+                                  ),
+                                  Text(
+                                    'Đề số 1',
+                                    style: TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'Nunito',
+                                        color: Colors.white),
+                                    textAlign: TextAlign.end,
+                                  ),
+                                ],
                               ),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(

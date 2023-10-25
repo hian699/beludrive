@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:testing/pages/Splash_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import './Theorytrainning/20cauliet.dart';
 import 'package:testing/variable/variable.dart';
 
 bool show = true;
-double scorevhvsddl = 0.00;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   show = await prefs.getBool('ON_BOARDING') ?? true;
   //progress of vanhoavadaoduclai
-  scorevhvsddl = await prefs.getDouble('vanhoavadaoduclai') ?? 0;
-
   runApp(const MyApp());
 }
 

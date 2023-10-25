@@ -154,7 +154,7 @@ class chooselicense extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 softWrap: true,
-                                'Bằng dùng cho xe hai bánh có dung tích si lanh trên 175cm3',
+                                'Bằng dùng cho xe hai bánh có dung tích si lanh trên 175cm3(Chưa làm)',
                                 style: TextStyle(
                                     fontFamily: 'Nunito',
                                     fontSize: 18,

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testing/Theorytrainning/20cauliet.dart';
 import 'package:testing/Theorytrainning/bienbaoduongbointheory.dart';
 import 'package:testing/Theorytrainning/knvaquytacintheory.dart';
@@ -12,6 +13,7 @@ import 'package:testing/models/questionvanhoavadaoduclaixe.dart';
 import 'package:testing/variable/variable.dart';
 
 class ThilythuyetA1 extends StatefulWidget {
+
   const ThilythuyetA1({super.key});
   @override
   State<ThilythuyetA1> createState() => _ThilythuyetA1State();
@@ -27,6 +29,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
   final Image _kythuatlai = Image.asset('assets/icons/kythuatlai.png');
   final Image _bienbaoduongbo = Image.asset('assets/icons/bienbaoduongbo.png');
   final Image _sahinh = Image.asset('assets/icons/sahinh.png');
+
 
   @override
   void initState() {
@@ -49,7 +52,6 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
   }
   @override
   Widget build(BuildContext context) {
-    int ivhvaddl = scorevhvsddl.toInt();
     return Scaffold(
       appBar: appbartheory(),
       backgroundColor: const Color(0xffF37020),
@@ -102,6 +104,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           const AutoSizeText(
                             '20 câu hỏi điểm liệt',
@@ -116,51 +119,8 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                             style:
                                 TextStyle(fontSize: 10, fontFamily: 'Nunito'),
                           ),
-                          Stack(
-                            alignment: Alignment.centerLeft,
-                            children: <Widget>[
-                              Container(
-                                  width: screenWidth * 0.58,
-                                  height: 10,
-                                  margin: const EdgeInsets.only(
-                                    top: 10,
-                                  ),
-                                  child: SliderTheme(
-                                    data: SliderThemeData(
-                                      overlayShape:
-                                          SliderComponentShape.noOverlay,
-                                      inactiveTrackColor:
-                                          const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37020),
-                                      inactiveTickMarkColor: Colors.transparent,
-                                      activeTickMarkColor: Colors.transparent,
-                                      thumbShape: const RoundSliderOverlayShape(
-                                          overlayRadius: 0),
-                                    ),
-                                    child: Slider(
-                                      min: 0,
-                                      max: 83,
-                                      divisions: 20,
-                                      value: scorevhvsddl,
-                                      onChanged: (double value) {
-                                        setState(() {
-                                          idiemliet = scorevhvsddl.toInt();
-                                        });
-                                      },
-                                    ),
-                                  )),
-                            ],
-                          )
                         ],
                       ),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            padding: const EdgeInsets.only(top: 40),
-                            child: Text('$idiemliet/20'),
-                          ),
-                        ],
-                      )
                     ],
                   ),
                   onPressed: () {
@@ -199,6 +159,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           const Text(
                             'Khái niệm và quy tắc',
@@ -212,52 +173,8 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                             style:
                                 TextStyle(fontSize: 10, fontFamily: 'Nunito'),
                           ),
-                          Stack(
-                            alignment: Alignment.centerLeft,
-                            children: <Widget>[
-                              Container(
-                                  width: screenWidth * 0.58,
-                                  height: 10,
-                                  margin: const EdgeInsets.only(
-                                    top: 10,
-                                  ),
-                                  child: SliderTheme(
-                                    data: SliderThemeData(
-                                      overlayShape:
-                                          SliderComponentShape.noOverlay,
-                                      inactiveTrackColor:
-                                          const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37020),
-                                      inactiveTickMarkColor: Colors.transparent,
-                                      activeTickMarkColor: Colors.transparent,
-                                      thumbShape: const RoundSliderOverlayShape(
-                                          overlayRadius: 0),
-                                    ),
-                                    child: Slider(
-                                      min: 0,
-                                      max: 83,
-                                      divisions: 20,
-                                      value: currentknvsqt,
-                                      onChanged: (double value) {
-                                        setState(() {
-                                          currentknvsqt = valuediemliet;
-                                          iknvsqt = currentknvsqt.toInt();
-                                        });
-                                      },
-                                    ),
-                                  )),
-                            ],
-                          )
                         ],
                       ),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            padding: const EdgeInsets.only(top: 40),
-                            child: Text('$iknvsqt/${khainiemvaquytacquestion.length}'),
-                          ),
-                        ],
-                      )
                     ],
                   ),
                   onPressed: () {
@@ -293,6 +210,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           const AutoSizeText(
                             'Văn hóa và đạo đức lái',
@@ -312,50 +230,10 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                           Stack(
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
-                              Container(
-                                  width: screenWidth * 0.58,
-                                  height: 5,
-                                  margin: const EdgeInsets.only(
-                                    top: 10,
-                                  ),
-                                child: SliderTheme(
-                                  data: SliderThemeData(
-                                    overlayShape:
-                                    SliderComponentShape.noOverlay,
-                                    inactiveTrackColor:
-                                    const Color(0xff858585),
-                                    activeTrackColor: const Color(0xffF37020),
-                                    inactiveTickMarkColor: Colors.transparent,
-                                    activeTickMarkColor: Colors.transparent,
-                                    thumbShape: const RoundSliderOverlayShape(
-                                        overlayRadius: 0),
-                                  ),
-                                  child: Slider(
-                                    min: 0,
-                                    max: 83,
-                                    divisions: 20,
-                                    value: currentknvsqt,
-                                    onChanged: (double value) {
-                                      setState(() {
-                                        currentknvsqt = valuediemliet;
-                                        iknvsqt = currentknvsqt.toInt();
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
                             ],
                           )
                         ],
                       ),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            padding: const EdgeInsets.only(top: 40),
-                            child: Text('$ivhvaddl/${vanhoavadaoduclaiquestion.length}'),
-                          ),
-                        ],
-                      )
                     ],
                   ),
                   onPressed: () {
@@ -391,6 +269,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           const Text(
                             'Kỹ thuật lái xe',
@@ -407,48 +286,10 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                           Stack(
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
-                              Container(
-                                  width: screenWidth * 0.58,
-                                  height: 10,
-                                  margin: const EdgeInsets.only(top: 10),
-                                  child: SliderTheme(
-                                    data: SliderThemeData(
-                                      overlayShape:
-                                          SliderComponentShape.noOverlay,
-                                      inactiveTrackColor:
-                                          const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37020),
-                                      inactiveTickMarkColor: Colors.transparent,
-                                      activeTickMarkColor: Colors.transparent,
-                                      thumbShape: const RoundSliderOverlayShape(
-                                          overlayRadius: 0),
-                                    ),
-                                    child: Slider(
-                                      min: 0,
-                                      max: 12,
-                                      divisions: 20,
-                                      value: currentkythuatlai,
-                                      onChanged: (double value) {
-                                        setState(() {
-                                          currentkythuatlai = valuediemliet;
-                                          ikythuatlai =
-                                              currentkythuatlai.toInt();
-                                        });
-                                      },
-                                    ),
-                                  )),
                             ],
                           )
                         ],
                       ),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            padding: const EdgeInsets.only(top: 40),
-                            child: Text('$ikythuatlai/12'),
-                          ),
-                        ],
-                      )
                     ],
                   ),
                   onPressed: () {
@@ -484,6 +325,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           const Text(
                             'Biển báo đường bộ',
@@ -497,53 +339,8 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                             style:
                                 TextStyle(fontSize: 10, fontFamily: 'Nunito'),
                           ),
-                          Stack(
-                            alignment: Alignment.centerLeft,
-                            children: <Widget>[
-                              Container(
-                                  width: screenWidth * 0.58,
-                                  height: 10,
-                                  margin: const EdgeInsets.only(
-                                    top: 10,
-                                  ),
-                                  child: SliderTheme(
-                                    data: SliderThemeData(
-                                      overlayShape:
-                                          SliderComponentShape.noOverlay,
-                                      inactiveTrackColor:
-                                          const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37020),
-                                      inactiveTickMarkColor: Colors.transparent,
-                                      activeTickMarkColor: Colors.transparent,
-                                      thumbShape: const RoundSliderOverlayShape(
-                                          overlayRadius: 0),
-                                    ),
-                                    child: Slider(
-                                      min: 0,
-                                      max: 20,
-                                      divisions: 20,
-                                      value: currentbienbaoduongbo,
-                                      onChanged: (double value) {
-                                        setState(() {
-                                          currentbienbaoduongbo = valuediemliet;
-                                          ibienbaoduongbo =
-                                              currentbienbaoduongbo.toInt();
-                                        });
-                                      },
-                                    ),
-                                  )),
-                            ],
-                          )
                         ],
                       ),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            padding: const EdgeInsets.only(top: 40),
-                            child: Text('$ibienbaoduongbo/65'),
-                          ),
-                        ],
-                      )
                     ],
                   ),
                   onPressed: () {
@@ -579,6 +376,7 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           const Text(
                             'Sa hình',
@@ -595,49 +393,10 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
                           Stack(
                             alignment: Alignment.centerLeft,
                             children: <Widget>[
-                              Container(
-                                  width: screenWidth * 0.58,
-                                  height: 15,
-                                  margin: const EdgeInsets.only(
-                                    top: 10,
-                                  ),
-                                  child: SliderTheme(
-                                    data: SliderThemeData(
-                                      overlayShape:
-                                          SliderComponentShape.noOverlay,
-                                      inactiveTrackColor:
-                                          const Color(0xff858585),
-                                      activeTrackColor: const Color(0xffF37020),
-                                      inactiveTickMarkColor: Colors.transparent,
-                                      activeTickMarkColor: Colors.transparent,
-                                      thumbShape: const RoundSliderOverlayShape(
-                                          overlayRadius: 0),
-                                    ),
-                                    child: Slider(
-                                      min: 0,
-                                      max: 35,
-                                      divisions: 20,
-                                      value: currentsahinh,
-                                      onChanged: (double value) {
-                                        setState(() {
-                                          currentsahinh = sahinh;
-                                          isahinh = currentsahinh.toInt();
-                                        });
-                                      },
-                                    ),
-                                  )),
                             ],
                           )
                         ],
                       ),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            padding: const EdgeInsets.only(top: 40),
-                            child: Text('$isahinh/35'),
-                          ),
-                        ],
-                      )
                     ],
                   ),
                   onPressed: () {
@@ -665,101 +424,6 @@ class _ThilythuyetA1State extends State<ThilythuyetA1> with TickerProviderStateM
       ),
       centerTitle: true,
       elevation: 0.0,
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.refresh_sharp),
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                backgroundColor: Color(0xffFB8D4C),
-                title: Center(
-                  child: Text(
-                    'Reset tất cả bài học',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Nunito',
-                      fontSize: 25,
-                    ),
-                  ),
-                ),
-                alignment: Alignment.center,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                ),
-                content: SingleChildScrollView(
-                  child: ListBody(
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xffFFEFC8),
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(width: 1),
-                        ),
-                        width: 300,
-                        height: 107,
-                        child: Text(
-                          'Bạn có muốn xóa tất cả các câu đã học. Nếu bạn chọn “Đồng ý” tất cả các câu đã học sẽ bị xóa và bạn sẽ phải học lại từ đầu',
-                          overflow: TextOverflow.clip,
-                          softWrap: true,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: 'Nunito',
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                actionsAlignment: MainAxisAlignment.spaceAround,
-                actions: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Đồng ý',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Nunito',
-                        fontSize: 17,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xffFFCA4B),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text(
-                      'Huỷ bỏ',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Nunito',
-                        fontSize: 17,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xffFFCA4B),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            );
-          },
-        )
-      ],
     );
   }
 }
