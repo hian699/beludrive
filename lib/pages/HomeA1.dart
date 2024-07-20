@@ -368,79 +368,79 @@ Cac nút bên trên một trang
                   ],
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> tracuuluatpre()));
+                  // Navigator.push(context, MaterialPageRoute(builder: (context)=> tracuuluatpre()));
 
-                  // showDialog(
-                  //   context: context,
-                  //   builder: (context) => AlertDialog(
-                  //     backgroundColor: const Color(0xffFB8D4C),
-                  //     title: const Center(
-                  //       child: Text(
-                  //         'Chưa làm(Không biết viết thuật toán)',
-                  //         style: TextStyle(
-                  //           color: Colors.white,
-                  //           fontWeight: FontWeight.bold,
-                  //           fontFamily: 'Nunito',
-                  //           fontSize: 25,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //     alignment: Alignment.center,
-                  //     shape: const RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.all(Radius.circular(30)),
-                  //     ),
-                  //     content: SingleChildScrollView(
-                  //       child: ListBody(
-                  //         children: <Widget>[
-                  //           Container(
-                  //             decoration: BoxDecoration(
-                  //               color: const Color(0xffFFEFC8),
-                  //               borderRadius: BorderRadius.circular(15),
-                  //               border: Border.all(width: 1),
-                  //             ),
-                  //             alignment: Alignment.center,
-                  //             width: 300,
-                  //             height: 107,
-                  //             child: const Text(
-                  //               'Tính năng đang phát triển',
-                  //               overflow: TextOverflow.clip,
-                  //               softWrap: true,
-                  //               textAlign: TextAlign.center,
-                  //               style: TextStyle(
-                  //                 fontSize: 16,
-                  //                 fontFamily: 'Nunito',
-                  //                 fontWeight: FontWeight.bold,
-                  //               ),
-                  //             ),
-                  //           )
-                  //         ],
-                  //       ),
-                  //     ),
-                  //     actionsAlignment: MainAxisAlignment.spaceAround,
-                  //     actions: [
-                  //       ElevatedButton(
-                  //         onPressed: () {
-                  //           Navigator.pop(context);
-                  //         },
-                  //         style: ElevatedButton.styleFrom(
-                  //           backgroundColor: const Color(0xffFFCA4B),
-                  //           shape: RoundedRectangleBorder(
-                  //             borderRadius: BorderRadius.circular(10),
-                  //           ),
-                  //         ),
-                  //         child: const Text(
-                  //           'Thoát',
-                  //           textAlign: TextAlign.center,
-                  //           style: TextStyle(
-                  //             fontWeight: FontWeight.bold,
-                  //             fontFamily: 'Nunito',
-                  //             fontSize: 17,
-                  //           ),
-                  //         ),
-                  //       )
-                  //     ],
-                  //   ),
-                  // );
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      backgroundColor: const Color(0xffFB8D4C),
+                      title: const Center(
+                        child: Text(
+                          'Tra cứu luật comeback 8/2024',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Nunito',
+                            fontSize: 25,
+                          ),
+                        ),
+                      ),
+                      alignment: Alignment.center,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                      ),
+                      content: SingleChildScrollView(
+                        child: ListBody(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                color: const Color(0xffFFEFC8),
+                                borderRadius: BorderRadius.circular(15),
+                                border: Border.all(width: 1),
+                              ),
+                              alignment: Alignment.center,
+                              width: 300,
+                              height: 107,
+                              child: const Text(
+                                'Tính năng đang phát triển',
+                                overflow: TextOverflow.clip,
+                                softWrap: true,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      actionsAlignment: MainAxisAlignment.spaceAround,
+                      actions: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xffFFCA4B),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: const Text(
+                            'Thoát',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Nunito',
+                              fontSize: 17,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  );
                 },
               ),
               ElevatedButton(

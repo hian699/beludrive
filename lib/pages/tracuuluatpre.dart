@@ -30,7 +30,7 @@ class _tracuuluatpreState extends State<tracuuluatpre> {
         centerTitle: true,
         elevation: 0,
       ),
-      body: SfPdfViewer.asset('assets/pdf/ND100_Luat.pdf'),
+      body: SfPdfViewer.asset(''),
     );
   }
 }
